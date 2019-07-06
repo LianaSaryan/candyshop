@@ -1,0 +1,14 @@
+<%= form_for([@shop, @shop.candies.build]) do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field(:name, {:class => 'form-control'}) %>
+	</p>
+  
+
+	<p>
+		<%= f.submit({:class => 'btn btn-primary'}) %>
+	</p>
+ 
+<% end %>
+
+</div>

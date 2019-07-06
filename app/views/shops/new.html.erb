@@ -1,0 +1,8 @@
+<h1>Welcome to the Candy Shop</h1>
+<h4>To begin your visit, please select 'Enter Shop'</h4>
+<%= form_for :shop, url: shops_path do |f| %>
+	<p>
+		<%= f.submit 'Enter Shop', class: "btn btn-primary" %>
+	</p>
+ 
+<% end %>
