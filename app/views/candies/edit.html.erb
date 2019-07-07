@@ -1,0 +1,19 @@
+<h1>Move Candy</h1>
+<%= form_for :candy, url: candy_path(@candy), method: :patch do |f| %>
+	<% if @candy.errors.any? %>
+		<% @candy.errors.full_messages.each do |msg| %>
+			<div class = "aler alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+
+	<p>
+		<%= f.label :move_to_shelf %><br>
+		<%= f.text_area(:belongs_to_shelf, {:class => 'form-control'}) %>
+	</p>
+  
+
+	<p>
+		<%= f.submit({:class => 'btn btn-primary'}) %>
+	</p>
+ 
+<% end %>

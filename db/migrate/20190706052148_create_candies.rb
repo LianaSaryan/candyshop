@@ -3,7 +3,6 @@ class CreateCandies < ActiveRecord::Migration[5.2]
     create_table :candies do |t|
       t.references :shop, foreign_key: true
       t.string :name
-      t.boolean :shelved
       t.integer :belongs_to_shelf
 
       t.timestamps

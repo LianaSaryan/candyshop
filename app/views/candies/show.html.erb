@@ -1,0 +1,4 @@
+<h2>Candy Name: <%= @candy.name%></h2>
+<p>Belongs to Shelf: <%= @candy.belongs_to_shelf %></p>
+
+<%= link_to "Move Candy", edit_shop_candy_path(@candy) , :class => 'btn btn-default' %>

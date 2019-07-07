@@ -3,6 +3,8 @@
 
 	<% @shop.candies.each do |candy| %>
 		<p><strong><%= candy.name %></strong></p>
+
+		<%= link_to "View Candy Details", candy_path(candy) , :class => 'btn btn-default' %>
 	<% end %>
 
 </div>
@@ -10,9 +12,11 @@
 <div class = "well">
 	<h3>List of Unshelved Candies in Shop:</h3>
 
-	<% @shop.candies.where(shelved: false).find_each do |candy| %>
+	<% @shop.candies.where(belongs_to_shelf: nil).find_each do |candy| %>
 		<p><strong><%= candy.name %></strong></p>
 	<% end %>
 </div>
+
+
 
 

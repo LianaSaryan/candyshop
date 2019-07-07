@@ -1,9 +1,15 @@
 <h2>Shelf #<%= @shelf.id%></h2>
-<p>Number of Candies: <%= @shelf.num_of_candies %></p>
+<p>Number of Candies: <%= Candy.where(:belongs_to_shelf => @shelf.id).count %> </p>
+
 <hr>
 <p>List of Candies in Shelf: </p>
 
+<% @shop.candies.where(belongs_to_shelf: @shelf.id).find_each do |candy| %>
+		<p><strong><%= candy.name %></strong></p>
+<% end %>
+
 <hr>
+
 <%= link_to "Delete Shelf", shop_shelf_path(@shelf.shop, @shelf),
 				method: :delete, 
 				data: {confirm: 'Are you sure?'},

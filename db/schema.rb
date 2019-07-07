@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2019_07_06_052148) do
   create_table "candies", force: :cascade do |t|
     t.integer "shop_id"
     t.string "name"
-    t.boolean "shelved"
     t.integer "belongs_to_shelf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,7 +23,6 @@ ActiveRecord::Schema.define(version: 2019_07_06_052148) do
 
   create_table "shelves", force: :cascade do |t|
     t.integer "shop_id"
-    t.integer "num_of_candies"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_shelves_on_shop_id"
