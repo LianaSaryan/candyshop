@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
 
   resources :shops do
-  	resources :shelves
-  	resources :candies
+  	resources :shelves, :candies
 	end
 end

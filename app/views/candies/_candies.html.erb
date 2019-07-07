@@ -4,8 +4,15 @@
 	<% @shop.candies.each do |candy| %>
 		<p><strong><%= candy.name %></strong></p>
 	<% end %>
+
 </div>
 
 <div class = "well">
-	<h3>Add Candy</h3>  
+	<h3>List of Unshelved Candies in Shop:</h3>
+
+	<% @shop.candies.where(shelved: false).find_each do |candy| %>
+		<p><strong><%= candy.name %></strong></p>
+	<% end %>
+</div>
+
 

@@ -21,10 +21,12 @@
         <span class = "icon bar"></span>
         <span class = "icon bar"></span>
       </button>
-      <a class = "navbar-brand" href="#">Candy Shop</a>
     </div>
     <div id ="navbar" class = "collapse navbar-collapse">
-
+      <u1 class = "nav navbar-nav">
+        <li><%= link_to "Candy Shop", shop_path(1) %></li>
+        <li><%= link_to "Shelves", shop_shelves_path(1) %></li>
+      </u1>
     </div>
   </div>
 </nav>

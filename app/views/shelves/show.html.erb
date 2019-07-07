@@ -1,0 +1,13 @@
+<h2>Shelf #<%= @shelf.id%></h2>
+<p>Number of Candies: <%= @shelf.num_of_candies %></p>
+<hr>
+<p>List of Candies in Shelf: </p>
+
+<hr>
+<%= link_to "Delete Shelf", shop_shelf_path(@shelf.shop, @shelf),
+				method: :delete, 
+				data: {confirm: 'Are you sure?'},
+
+				:class => 'btn btn-danger' %>
+
+<hr>

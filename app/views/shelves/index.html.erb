@@ -1,0 +1,8 @@
+<h1>Shelves</h1>
+
+<% @shelves.each do |shelf| %>
+	<div class="well">
+		<h1>Shelf #<%= shelf.id %></h1>
+		<%= link_to "Visit Shelf", shop_shelf_path(@shop, shelf), :class => 'btn btn-primary' %>
+	</div>
+<% end %>
