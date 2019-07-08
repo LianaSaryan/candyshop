@@ -1,9 +1,14 @@
 <div class = "well">
 	<h3>Add Candy</h3>  
 	<%= form_for([@shop, @shop.candies.build]) do |f| %>
+<% if @shop.errors.any? %>
+    <% @shop.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
 		<p>
 			<%= f.label :name %><br>
-			<%= f.text_field(:name, {:class => 'form-control'}) %>
+			<%= f.text_field(:name,:required => true, :class => 'form-control') %>
 		</p>
 	  
 

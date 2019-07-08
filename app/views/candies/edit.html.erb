@@ -1,4 +1,6 @@
 <h1>Move Candy</h1>
+<p>To move a candy to a shelf, please enter the number of the shelf. Ex: '1', '2', '3', etc. and select 'Save Candy'.</p>
+<p>To unshelf a candy, leave the following field blank and select 'Save Candy'. </p>
 <%= form_for :candy, url: candy_path(@candy), method: :patch do |f| %>
 	<% if @candy.errors.any? %>
 		<% @candy.errors.full_messages.each do |msg| %>

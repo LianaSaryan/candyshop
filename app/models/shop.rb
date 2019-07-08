@@ -1,7 +1,8 @@
 class Shop < ApplicationRecord
-
 	has_many :shelves
 	has_many :candies
+
+	validates_associated :candies
 	
 	after_initialize :init
 
