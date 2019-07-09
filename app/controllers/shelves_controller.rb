@@ -9,6 +9,7 @@ class ShelvesController < ApplicationController
 		@shop = Shop.find(1)
 		@shop.num_of_shelves += 1
 		@shop.save
+		
 		@shelf = @shop.shelves.create()
 		redirect_to shop_shelves_path(@shop)
 	end
@@ -17,7 +18,6 @@ class ShelvesController < ApplicationController
 		@shop = Shop.find(1)
 		@shelf = Shelf.find(params[:id])
 	end
-
 
 	def destroy
 		@shop = Shop.find(params[:shop_id])
@@ -34,5 +34,3 @@ class ShelvesController < ApplicationController
 	end
 
 end
-
-Shelf.where(id: 1)

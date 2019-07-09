@@ -3,7 +3,6 @@
 
 	<% @shop.candies.each do |candy| %>
 		<p><strong><%= candy.name %></strong></p>
-
 		<%= link_to "View Candy Details", candy_path(candy) , :class => 'btn btn-default' %>
 	<% end %>
 

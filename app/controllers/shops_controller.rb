@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
 
-	def new
+	def welcome
 
 	end
 
@@ -16,7 +16,6 @@ class ShopsController < ApplicationController
 
 	def show
 		@shop = Shop.find(1)
-
 	end
 
 	def update
