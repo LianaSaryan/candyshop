@@ -34,3 +34,5 @@ class ShelvesController < ApplicationController
 	end
 
 end
+
+Shelf.where(id: 1)

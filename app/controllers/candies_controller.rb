@@ -13,16 +13,28 @@ class CandiesController < ApplicationController
 
 	def edit
 		@candy = Candy.find(params[:id])
+		@shelves = Shelf.all
 	end
 
 	def update
 		@candy = Candy.find(params[:id])
+		@previous_shelf_location = @candy.belongs_to_shelf
+
 
 		if(@candy.update(candy_params))
-			redirect_to @candy
+			@search = Shelf.where(id: @candy.belongs_to_shelf)
+			if @search.blank?
+				@candy.belongs_to_shelf = @previous_shelf_location
+				@candy.save
+				render 'edit'
+			else
+				redirect_to @candy
+			end
 		else
 			render 'edit'
 		end
+
+
 	end
 
 	def destroy
@@ -37,3 +49,4 @@ class CandiesController < ApplicationController
 	end
 
 end
+

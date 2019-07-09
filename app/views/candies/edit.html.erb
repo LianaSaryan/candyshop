@@ -1,13 +1,24 @@
 <h1>Move Candy</h1>
 <p>To move a candy to a shelf, please enter the number of the shelf. Ex: '1', '2', '3', etc. and select 'Save Candy'.</p>
 <p>To unshelf a candy, leave the following field blank and select 'Save Candy'. </p>
+
+<hr>
+
+<p>The following shelves are available in the shop. If no shelf is available, please select 'Create Shelf' from the Home Page.</p>
+
+<% @shelves.each do |shelf| %>
+	<p>Shelf #<%= shelf.id %></p>
+<% end %>
+
+
+<hr>
+
 <%= form_for :candy, url: candy_path(@candy), method: :patch do |f| %>
 	<% if @candy.errors.any? %>
 		<% @candy.errors.full_messages.each do |msg| %>
 			<div class = "aler alert-danger"><%= msg %></div>
 		<% end %>
 	<% end %>
-
 	<p>
 		<%= f.label :move_to_shelf %><br>
 		<%= f.text_area(:belongs_to_shelf, {:class => 'form-control'}) %>
